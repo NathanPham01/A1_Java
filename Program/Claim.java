@@ -94,7 +94,5 @@ public class Claim {
         return receiverBankingInfo;
     }
 
-    public void setReceiverBankingInfo(ReceiverBankingInfo receiverBankingInfo) {
-        this.receiverBankingInfo = receiverBankingInfo;
-    }
+
 }

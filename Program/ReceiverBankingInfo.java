@@ -34,4 +34,6 @@ public class ReceiverBankingInfo {
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
+
+
 }

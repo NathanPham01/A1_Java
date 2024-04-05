@@ -1,28 +1,30 @@
 package Testing_Space;
 import Program.Claim;
 import Program.PolicyHolder;
-
 import Program.ReceiverBankingInfo;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-public class MainProgram {
+
+public class MainProgram_2 {
     public static void main(String[] args) {
         PolicyHolder policyHolder = null;
-        try{
-            FileReader reader = new FileReader("policyholder.json");
+        try {
+            Gson gson = new GsonBuilder().create();
 
-            Gson gson = new Gson();
+            // Read JSON file into PolicyHolder object
+            policyHolder = gson.fromJson(new FileReader("data.json"), PolicyHolder.class);
 
-            policyHolder = gson.fromJson(reader, PolicyHolder.class);
-
-            reader.close();
-        }
-        catch (IOException e){
+            // Display loaded data
+            System.out.println("Loaded Policy Holder Data:");
+            System.out.println(policyHolder);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         if (policyHolder != null) {
             System.out.println("PolicyHolder Details:");
             System.out.println("ID: " + policyHolder.getId());
@@ -54,10 +56,7 @@ public class MainProgram {
                 System.out.println("    Number: " + receiverBankingInfo.getAccountNumber());
                 System.out.println();
             }
-        } else {
-            System.out.println("Failed to load PolicyHolder data from JSON.");
+
         }
-
-
     }
 }

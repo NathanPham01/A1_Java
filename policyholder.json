@@ -1,0 +1,42 @@
+{
+  "id": "PH123456",
+  "fullName": "John Doe",
+  "insuranceCard": {
+    "cardNumber": "1234567890",
+    "cardHolder": "John Doe",
+    "policyOwner": "John Doe",
+    "expirationDate": "2024-12-31"
+  },
+  "claims": [
+    {
+      "id": "f1234567890",
+      "claimDate": "2024-04-04",
+      "insuredPerson": "John Doe",
+      "cardNumber": "1234567890",
+      "examDate": "2024-04-02",
+      "documents": ["f1234567890_1234567890_Document1.pdf", "f1234567890_1234567890_Document2.pdf"],
+      "claimAmount": 5000,
+      "status": "New",
+      "receiverBankingInfo": {
+        "bank": "Bank of America",
+        "name": "John Doe",
+        "number": "1234567890"
+      }
+    },
+    {
+      "id": "f9876543210",
+      "claimDate": "2024-03-15",
+      "insuredPerson": "Jane Smith",
+      "cardNumber": "0987654321",
+      "examDate": "2024-03-10",
+      "documents": ["f9876543210_0987654321_Document1.pdf"],
+      "claimAmount": 7000,
+      "status": "Processing",
+      "receiverBankingInfo": {
+        "bank": "Chase",
+        "name": "Jane Smith",
+        "number": "0987654321"
+      }
+    }
+  ]
+}

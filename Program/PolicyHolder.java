@@ -16,4 +16,6 @@ public class PolicyHolder extends Customer{
     public void setDependents(List<Customer> dependents){
         this.dependents = dependents;
     }
+
+
 }

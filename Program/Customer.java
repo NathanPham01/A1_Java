@@ -46,4 +46,13 @@ public abstract class Customer {
     public void setClaims(List<Claim> claims) {
         this.claims = claims;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", insuranceCard=" + insuranceCard +
+                '}';
+    }
 }
