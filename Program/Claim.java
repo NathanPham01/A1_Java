@@ -94,5 +94,18 @@ public class Claim {
         return receiverBankingInfo;
     }
 
-
+    @Override
+    public String toString() {
+        return "Claim{" +
+                "id='" + id + '\'' +
+                ", claimDate=" + claimDate +
+                ", insuredPerson='" + insuredPerson + '\'' +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", examDate=" + examDate +
+                ", documents=" + documents +
+                ", claimAmount=" + claimAmount +
+                ", status='" + status + '\'' +
+                ", receiverBankingInfo=" + receiverBankingInfo +
+                '}';
+    }
 }

@@ -53,6 +53,7 @@ public abstract class Customer {
                 "id='" + id + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", insuranceCard=" + insuranceCard +
+                ", claims=" + claims +
                 '}';
     }
 }

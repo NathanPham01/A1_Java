@@ -25,23 +25,6 @@
           "accountName": "Ken Doe",
           "accountNumber": "32132423"
         }
-      },
-      {
-        "id": "f-0987654321",
-        "claimDate": "2024-04-02",
-        "insuredPerson": "John Smith",
-        "cardNumber": "0987654321",
-        "examDate": "2024-03-29",
-        "documents": [
-          "claim456_0987654321_document1.pdf"
-        ],
-        "claimAmount": 1500.00,
-        "status": "Pending",
-        "receiverBankingInfo": {
-          "bankName": "Wells Fargo",
-          "accountName": "Emily Smith",
-          "accountNumber": "54321098"
-        }
       }
     ]
   },
@@ -56,20 +39,20 @@
     },
     "claims": [
       {
-        "id": "f-987654321",
-        "claimDate": "2024-04-02",
+        "id": "f-9876543210",
+        "claimDate": "2024-03-15",
         "insuredPerson": "John Smith",
         "cardNumber": "0987654321",
-        "examDate": "2024-03-29",
+        "examDate": "2024-03-10",
         "documents": [
-          "claim456_0987654321_document1.pdf"
+          "claim456_0987654321_document2.pdf"
         ],
-        "claimAmount": 1500.00,
-        "status": "Pending",
+        "claimAmount": 5000.0,
+        "status": "Processing",
         "receiverBankingInfo": {
-          "bankName": "Wells Fargo",
-          "accountName": "Emily Smith",
-          "accountNumber": "54321098"
+          "bankName": "Chase",
+          "accountName": "Brian Doe",
+          "accountNumber": "65423432"
         }
       }
     ]
