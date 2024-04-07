@@ -12,11 +12,13 @@ import java.io.Reader;
 
 public class json_read {
     public static void main(String[] args) {
-        String filePath = "data.json";
+        String filePath = "list_policyHolder.json";
 
         try (Reader reader = new FileReader(filePath)){
             Gson gson = new Gson();
 
+            //you can say that this line loads the array of PolicyHolder objects into the program's memory,
+            // making it available for use in subsequent parts of the code.
             PolicyHolder[] holders = gson.fromJson(reader, PolicyHolder[].class);
 
             for(PolicyHolder holder:holders){

@@ -1,0 +1,42 @@
+// TEST ADD CLAIM DEPENDENT
+new START().addClaimToDependent(dependents,"c-7481963", new Claim("f-999999999",
+                date, "John Doe", "1234567890", date,
+                List.of("Document1", "Document2", "Document3"),
+                 2500.00, "New", new ReceiverBankingInfo("Chase",
+                "Tom Scott", "321321442")), "list_dependent.json");
+
+// TEST DELETE CLAIM DEPENDENT
+new START().deleteClaimDependent(dependents,"c-7481963", "f-999999999",
+                "list_dependent.json");
+
+// Calling Method (Static Void not "Void")
+Start.modifyClaimMethod();
+
+//Modify Attribute P1 (Dependent)
+START.modifyClaimAttributeDependent(dependents, "c-7481963", "f-9376528164","insuredPerson",
+                "Tom Boyle", "list_dependent.json");
+
+//Modify Claim (ReceiverBankingInfo)(Dependent)
+ReceiverBankingInfo newEntry =  new ReceiverBankingInfo("Chase", "Tom Marry", "3213223223");
+START.modifyReceiverBankingInfo(dependents, "c-7481963", "f-9376528164",newEntry,"list_dependent.json");
+
+//Modify Claim (Date) (Dependent)
+START.modifyDateDependent(dependents, "c-7481963", "f-9376528164","examDate", "2025-12-10","list_dependent.json");
+
+//Modify Claim (Document) (Dependent)
+List<String> newDocuments = List.of("document1", "document2", "document3"); //PLACEHOLDER
+// MUST FOLLOW ClaimID_CardNumber_DocName.pdf
+
+START.modifyDocumentsDependent(dependents, "c-7481963", "f-9376528164", newDocuments,
+                "list_dependent.json");
+
+
+//Extract RootID (no IDs from claims)
+//Extract RootID
+List<String> rootIds = extractRootIds(dependents); //Implementation in START.java
+
+for (String id : rootIds) {
+    System.out.println(id);
+}
+
+

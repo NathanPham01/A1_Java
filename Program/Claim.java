@@ -14,7 +14,8 @@ public class Claim {
     private String status;
     private ReceiverBankingInfo receiverBankingInfo;
 
-    public Claim(String id, Date claimDate, String insuredPerson, String cardNumber, Date examDate, List<String> documents, double claimAmount, String status, ReceiverBankingInfo receiverBankingInfo) {
+    public Claim(String id, Date claimDate, String insuredPerson, String cardNumber, Date examDate, List<String> documents,
+                 double claimAmount, String status, ReceiverBankingInfo receiverBankingInfo) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPerson = insuredPerson;
@@ -92,6 +93,9 @@ public class Claim {
 
     public ReceiverBankingInfo getReceiverBankingInfo() {
         return receiverBankingInfo;
+    }
+    public void setReceiverBankingInfo(ReceiverBankingInfo receiverBankingInfo) {
+        this.receiverBankingInfo = receiverBankingInfo;
     }
 
     @Override

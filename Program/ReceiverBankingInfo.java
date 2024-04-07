@@ -35,6 +35,8 @@ public class ReceiverBankingInfo {
         this.accountNumber = accountNumber;
     }
 
+
+
     @Override
     public String toString() {
         return "ReceiverBankingInfo{" +

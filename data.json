@@ -71,6 +71,18 @@
           "accountName": "Emily Smith",
           "accountNumber": "54321098"
         }
+      },
+      {
+        "id": "f-6543210987",
+        "claimDate": "2024-04-05",
+        "insuredPerson": "Jane Smith",
+        "cardNumber": "0987654321",
+        "examDate": "2024-03-30",
+        "documents": [
+          "claim789_0987654321_document1.pdf"
+        ],
+        "claimAmount": 2000.0,
+        "status": "New"
       }
     ]
   }
