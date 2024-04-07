@@ -170,27 +170,12 @@ public class START implements ClaimProcessManager  {
         System.out.println("Claim or dependent not found.");
     }
 
-    public static void modifyReceiverBankingInfo(List<Dependent> dependents, String dependentId, String claimId,
-                                                 ReceiverBankingInfo newReceiverBankingInfo, String filePath){
-        for (Dependent dependent : dependents) {
-            if (dependent.getId().equals(dependentId)) {
-                for (Claim claim : dependent.getClaims()) {
-                    if (claim.getId().equals(claimId)) {
-                        claim.setReceiverBankingInfo(newReceiverBankingInfo);
-                        writeDependentsToJson(dependents, filePath);
-                        return;
-                    }
-                }
-            }
-        }
-        System.out.println("Claim or dependent not found.");
-    }
 
-    public static void modifyDateDependent(List<Dependent> dependents, String dependentId, String claimId, String attribute,
-                                           String newValue , String filePath){
-        for (Dependent dependent : dependents) {
-            if (dependent.getId().equals(dependentId)) {
-                for (Claim claim : dependent.getClaims()) {
+    public static void modifyDatePolicyHolder(List<PolicyHolder> holders, String policyHolderId, String claimId,
+                                              String attribute, String newValue, String filePath) {
+        for (PolicyHolder policyHolder : holders) {
+            if (policyHolder.getId().equals(policyHolderId)) {
+                for (Claim claim : policyHolder.getClaims()) {
                     if (claim.getId().equals(claimId)) {
                         switch (attribute) {
                             case "examDate":
@@ -202,8 +187,8 @@ public class START implements ClaimProcessManager  {
                                     } else if (attribute.equals("claimDate")) {
                                         claim.setClaimDate(date);
                                     }
-                                    //Write updated JSON file
-                                    writeDependentsToJson(dependents, filePath);
+                                    // Write updated JSON file
+                                    writePolicyHoldersToJson(holders, filePath);
                                 } else {
                                     System.out.println("Invalid date format for " + attribute);
                                 }
@@ -217,24 +202,25 @@ public class START implements ClaimProcessManager  {
                 }
             }
         }
-        System.out.println("Claim or dependent not found.");
+        System.out.println("Claim or policy holder not found.");
     }
 
-    public static void modifyDocumentsDependent(List<Dependent> dependents, String dependentId, String claimId,
+    public static void modifyDocumentsPolicyHolder(List<PolicyHolder> holders, String HolderId, String claimId,
                                                 List<String> newDocuments, String filePath){
-        for (Dependent dependent : dependents) {
-            if (dependent.getId().equals(dependentId)) {
-                for (Claim claim : dependent.getClaims()) {
+        for (PolicyHolder policyHolder : holders) {
+            if (policyHolder.getId().equals(HolderId)) {
+                for (Claim claim : policyHolder.getClaims()) {
                     if (claim.getId().equals(claimId)) {
                         claim.setDocuments(newDocuments);
-                        writeDependentsToJson(dependents, filePath);
+                        writePolicyHoldersToJson(holders, filePath);
                         return;
                     }
                 }
             }
         }
-        System.out.println("Claim or dependent not found.");
+        System.out.println("Claim or policy holder not found.");
     }
+
 
     public static void writeDependentsToJson(List<Dependent> dependents, String filePath) {
         try (FileWriter writer = new FileWriter(filePath)) {
