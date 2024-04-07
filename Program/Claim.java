@@ -100,16 +100,16 @@ public class Claim {
 
     @Override
     public String toString() {
-        return "Claim{" +
-                "id='" + id + '\'' +
-                ", claimDate=" + claimDate +
-                ", insuredPerson='" + insuredPerson + '\'' +
-                ", cardNumber='" + cardNumber + '\'' +
-                ", examDate=" + examDate +
-                ", documents=" + documents +
-                ", claimAmount=" + claimAmount +
-                ", status='" + status + '\'' +
-                ", receiverBankingInfo=" + receiverBankingInfo +
-                '}';
+        return "Claim: " +
+                "\n\tid='" + id + '\'' +
+                "\n\tclaimDate=" + claimDate +
+                "\n\tinsuredPerson='" + insuredPerson + '\'' +
+                "\n\tcardNumber='" + cardNumber + '\'' +
+                "\n\texamDate=" + examDate +
+                "\n\tdocuments=" + documents +
+                "\n\tclaimAmount=" + claimAmount +
+                "\n\tstatus='" + status + '\'' +
+                "\n\treceiverBankingInfo=" + receiverBankingInfo +
+                "\n";
     }
 }

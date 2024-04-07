@@ -5,8 +5,9 @@ import java.util.List;
 public class PolicyHolder extends Customer{
     private List<String> dependent_list;
 
-    public PolicyHolder(String id, String fullName, InsuranceCard insuranceCard, List<Claim> claims) {
+    public PolicyHolder(String id, String fullName, InsuranceCard insuranceCard, List<Claim> claims, List<String> dependent_list) {
         super(id, fullName, insuranceCard, claims);
+        this.dependent_list = dependent_list;
     }
 
     public List<String> getDependents() {

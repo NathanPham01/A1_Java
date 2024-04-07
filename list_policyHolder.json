@@ -1,54 +1,127 @@
 [
   {
+    "dependent_list": [
+      "John Doe",
+      "Alice Johnson",
+      "Emily Rogers",
+      "Michael Johnson",
+      "David Brown"
+    ],
     "id": "c-9823745",
     "fullName": "John Smith",
     "insuranceCard": {
       "cardNumber": "1234567890",
       "cardHolder": "John Smith",
       "policyOwner": "John Smith",
-      "expirationDate": "2025-12-31"
+      "expirationDate": "Dec 31, 2025, 12:00:00 AM"
     },
     "claims": [
       {
-        "id": "f-1234567890",
-        "claimDate": "2024-04-05",
-        "insuredPerson": "John Smith",
+        "id": "f-999999999",
+        "claimDate": "Jan 1, 2025, 12:00:00 AM",
+        "insuredPerson": "John Doe",
         "cardNumber": "1234567890",
-        "examDate": "2024-04-03",
+        "examDate": "Jan 1, 2025, 12:00:00 AM",
         "documents": [
-          "claim001_1234567890_document1.pdf"
+          "Document1",
+          "Document2",
+          "Document3"
         ],
-        "claimAmount": 2800.00,
+        "claimAmount": 2500.0,
         "status": "New",
         "receiverBankingInfo": {
           "bankName": "Chase",
-          "accountName": "John Smith",
-          "accountNumber": "98765432"
+          "accountName": "Tom Scott",
+          "accountNumber": "321321442"
+        }
+      },
+      {
+        "id": "f-5398720146",
+        "claimDate": "Jan 1, 2025, 12:00:00 AM",
+        "insuredPerson": "Mary Smith",
+        "cardNumber": "783409215",
+        "examDate": "Jan 1, 2025, 12:00:00 AM",
+        "documents": [
+          "Document1",
+          "Document2",
+          "Document3"
+        ],
+        "claimAmount": 2500.0,
+        "status": "Done",
+        "receiverBankingInfo": {
+          "bankName": "Chase",
+          "accountName": "Tom Scott",
+          "accountNumber": "8675309"
+        }
+      },
+      {
+        "id": "f-5728319046",
+        "claimDate": "Jun 12, 2025, 12:00:00 AM",
+        "insuredPerson": "",
+        "cardNumber": "232312312",
+        "examDate": "Oct 1, 2026, 12:00:00 AM",
+        "documents": [
+          ".pdf",
+          "documents1.pdf"
+        ],
+        "claimAmount": 4500.0,
+        "status": "New",
+        "receiverBankingInfo": {
+          "bankName": "",
+          "accountName": "Chase",
+          "accountNumber": "3223"
+        }
+      },
+      {
+        "id": "f-32323132",
+        "claimDate": "Oct 30, 2026, 12:00:00 AM",
+        "insuredPerson": "John Doe",
+        "cardNumber": "3212321",
+        "examDate": "Oct 29, 2025, 12:00:00 AM",
+        "documents": [
+          ".pdf",
+          "documents2.pdf",
+          "doc3.pdf"
+        ],
+        "claimAmount": 4500.0,
+        "status": "Done",
+        "receiverBankingInfo": {
+          "bankName": "",
+          "accountName": "Jane",
+          "accountNumber": "32134"
         }
       }
-    ],
-    "dependent_list": ["John Doe", "Alice Johnson","Emily Rogers","Michael Johnson", "David Brown"]
+    ]
   },
   {
+    "dependent_list": [
+      "Emily Harris",
+      "Olivia Anderson",
+      "Ethan Wilson",
+      "Natalie King",
+      "Sophia Lee",
+      "Daniel Garcia",
+      "Olivia Moore"
+    ],
     "id": "c-7829345",
     "fullName": "Michael Jones",
     "insuranceCard": {
       "cardNumber": "9876543210",
       "cardHolder": "Michael Jones",
       "policyOwner": "Michael Jones",
-      "expirationDate": "2025-12-31"
+      "expirationDate": "Dec 31, 2025, 12:00:00 AM"
     },
     "claims": [
       {
         "id": "f-9876543210",
-        "claimDate": "2024-04-05",
+        "claimDate": "Apr 5, 2024, 12:00:00 AM",
         "insuredPerson": "Michael Jones",
         "cardNumber": "9876543210",
-        "examDate": "2024-04-03",
+        "examDate": "Apr 3, 2024, 12:00:00 AM",
         "documents": [
           "claim001_9876543210_document1.pdf"
         ],
-        "claimAmount": 2500.00,
+        "claimAmount": 2500.0,
         "status": "New",
         "receiverBankingInfo": {
           "bankName": "Bank of America",
@@ -56,30 +129,36 @@
           "accountNumber": "98765432"
         }
       }
-    ],
-    "dependent_list":["Emily Harris", "Olivia Anderson", "Ethan Wilson", "Natalie King",
-      "Sophia Lee", "Daniel Garcia",  "Olivia Moore"]
+    ]
   },
   {
+    "dependent_list": [
+      "Sarah White",
+      "Daniel Green",
+      "Rebecca Taylor",
+      "Michael Harris",
+      "Jennifer Clark",
+      "Sophia Baker"
+    ],
     "id": "c-9203847",
     "fullName": "Emily Brown",
     "insuranceCard": {
       "cardNumber": "1234567890",
       "cardHolder": "Emily Brown",
       "policyOwner": "Emily Brown",
-      "expirationDate": "2025-12-31"
+      "expirationDate": "Dec 31, 2025, 12:00:00 AM"
     },
     "claims": [
       {
         "id": "f-1234567890",
-        "claimDate": "2024-04-05",
+        "claimDate": "Apr 5, 2024, 12:00:00 AM",
         "insuredPerson": "Emily Brown",
         "cardNumber": "1234567890",
-        "examDate": "2024-04-03",
+        "examDate": "Apr 3, 2024, 12:00:00 AM",
         "documents": [
           "claim001_1234567890_document1.pdf"
         ],
-        "claimAmount": 2800.00,
+        "claimAmount": 2800.0,
         "status": "New",
         "receiverBankingInfo": {
           "bankName": "Chase",
@@ -87,8 +166,6 @@
           "accountNumber": "98765432"
         }
       }
-    ],
-    "dependent_list": ["Sarah White", "Daniel Green","Rebecca Taylor",
-      "Michael Harris","Jennifer Clark","Sophia Baker"]
+    ]
   }
 ]
