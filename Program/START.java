@@ -551,7 +551,7 @@ public class START implements ClaimProcessManager  {
         String filePath = "list_policyHolder.json";
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter Card Number:");
+        System.out.println("Please Enter Card Number:");
         String newValue = scan.nextLine();
 
         for (PolicyHolder holder : holders) {
