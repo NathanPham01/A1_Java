@@ -1,3 +1,0 @@
-id,fullName,insuranceCard.cardNumber,insuranceCard.cardHolder,insuranceCard.policyOwner,insuranceCard.expiryDate,claims.id,claims.claimDate,claims.insuredPerson,claims.cardNumber,claims.examDate,claims.documents,claims.claimAmount,claims.status,claims.receiverBankingInfo
-1,John Doe,1234567890,John Doe,John Doe,2024-12-31,f-1234567890,2024-04-01,Jane Doe,1234567890,2024-03-30,claim123_1234567890_document1.pdf,1000.00,New,BankName-12345
-2,Jane Smith,0987654321,Jane Smith,Jane Smith,2025-12-31,f-9876543210,2024-03-15,John Smith,0987654321,2024-03-10,claim456_0987654321_document2.pdf,1500.00,Processing,BankName-54321

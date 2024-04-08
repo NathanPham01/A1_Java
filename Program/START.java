@@ -45,7 +45,36 @@ public class START implements ClaimProcessManager  {
         // Display message based on input
         if (input == 1) {
             System.out.println("Depedent sign in");
-            signIn(dependent_ids);
+            String enteredId = signIn(dependent_ids);
+            String outputId_dependent = extractId(enteredId);
+
+            System.out.println("You have these functions:");
+            System.out.println("1. View Your Specific Claim");
+            System.out.println("2. View All Your Claims");
+
+            while (true){
+                try{
+                    System.out.print("Enter a number from 1 to 2 (0 to exit): ");
+                    int choice_d = scanner.nextInt();
+                    switch (choice_d){
+                        case 0:
+                            System.out.println("Exiting program.");
+                            scanner.close();
+                            return;
+                        case 1:
+                            printClaimDependent(dependents, outputId_dependent);
+                            break;
+                        case 2:
+                            printAllClaimsDependent(dependents, outputId_dependent);
+                            break;
+                    }
+                }
+                catch (Exception e){
+                    System.out.println("Invalid input. Please enter a valid integer.");
+                    scanner.next(); // Clear invalid input
+                }
+            }
+
         } else {
             System.out.println("Policy Holder sign in");
             String enteredId = signIn(holder_ids);
@@ -92,7 +121,6 @@ public class START implements ClaimProcessManager  {
                 }
             }
         }
-        scanner.close();
     }
 
 
@@ -427,7 +455,7 @@ public class START implements ClaimProcessManager  {
 
     public static void modifyAttributeMenu(List<PolicyHolder> holders, String policyHolderId){
         List<String> claimIdList = extractClaimIDPolicyHolder(holders, policyHolderId);
-        System.out.println("Claim IDs for Policy Holder with ID "+ policyHolderId+ ":");
+        System.out.println("List of Claim IDs for Policy Holder with ID "+ policyHolderId+ ":");
         for (String claimID : claimIdList) {
             System.out.println(claimID);
         }
@@ -501,7 +529,25 @@ public class START implements ClaimProcessManager  {
         String filePath = "list_policyHolder.json";
 
         Scanner scan = new Scanner(System.in);
-        String newValue = scan.nextLine();
+        System.out.println("Please enter 10 digits number: ");
+        long newIdNum = 0;
+
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                newIdNum = scan.nextLong();
+                if (String.valueOf(newIdNum).length() == 10) {
+                    validInput = true;
+                } else {
+                    System.out.print("Invalid input. Please enter a 10-digit number: ");
+                }
+            } catch (Exception e) {
+                System.out.print("Invalid input. Please enter a valid number: ");
+                scan.nextLine(); // Clear the buffer
+            }
+        }
+
+        String newValue = "f-" + newIdNum;
 
         for (PolicyHolder holder : holders) {
             if (holder.getId().equals(holderId)) {
@@ -800,6 +846,12 @@ public class START implements ClaimProcessManager  {
     }
 
     public static void printClaimHolders(List<PolicyHolder> holders, String holderId){
+        List<String> claimIdList = extractClaimIDPolicyHolder(holders, holderId);
+        System.out.println("List of Claim IDs for Policy Holder with ID "+ holderId+ ":");
+        for (String claimID : claimIdList) {
+            System.out.println(claimID);
+        }
+
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter claimID (f-10 digits: ");
         String claimId = scan.nextLine();
@@ -822,8 +874,14 @@ public class START implements ClaimProcessManager  {
     }
 
     public static void printClaimDependent(List<Dependent> dependents, String dependentId){
+        List<String> claimIdList = extractClaimIdDependent(dependents, dependentId);
+        System.out.println("List of Claim IDs for Dependent with ID "+ dependentId+ ":");
+        for (String claimID : claimIdList) {
+            System.out.println(claimID);
+        }
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter claimID (f-10 digits: ");
+        System.out.println("Enter claimID (f-10 digits): ");
         String claimId = scan.nextLine();
 
         for (Dependent dependent : dependents){
