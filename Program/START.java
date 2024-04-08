@@ -490,7 +490,7 @@ public class START implements ClaimProcessManager  {
         String filePath = "list_policyHolder.json";
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter 10 digits number: ");
+        System.out.println("Please enter ClaimID (must be 10 digits number): ");
         long newIdNum = 0;
 
         boolean validInput = false;
@@ -814,7 +814,7 @@ public class START implements ClaimProcessManager  {
         }
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter claimID (f-10 digits: ");
+        System.out.println("Please enter claimID(copy ClaimID from list above): ");
         String claimId = scan.nextLine();
 
         for (PolicyHolder holder : holders){
@@ -842,7 +842,7 @@ public class START implements ClaimProcessManager  {
         }
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter claimID (f-10 digits): ");
+        System.out.println("Enter claimID (f-10 digits)(Copy claimID from list above): ");
         String claimId = scan.nextLine();
 
         for (Dependent dependent : dependents){
