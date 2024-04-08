@@ -361,48 +361,6 @@ public class START implements ClaimProcessManager  {
         System.out.println("PolicyHolder not found.");
     }
 
-    @Override
-    public void addClaimToDependent(List<Dependent> dependents, String dependentId, Claim claim, String filePath){
-        for (Dependent dependent : dependents) {
-            if (dependent.getId().equals(dependentId)) {
-                dependent.getClaims().add(claim);
-                try {
-                    // Write the updated list of dependents to JSON file
-                    writeDependentsToJson(dependents, filePath);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return;
-            }
-        }
-        System.out.println("Dependent not found.");
-    }
-
-    @Override
-    public void deleteClaimDependent(List<Dependent> dependents, String dependentId, String claimId, String filePath){
-        for (Dependent dependent : dependents) {
-            if (dependent.getId().equals(dependentId)) {
-                List<Claim> claims = dependent.getClaims();
-                for (Iterator<Claim> iterator = claims.iterator(); iterator.hasNext();) {
-                    Claim claim = iterator.next();
-                    if (claim.getId().equals(claimId)) {
-                        iterator.remove();
-                        try {
-                            // Write the updated list of dependents to JSON file
-                            writeDependentsToJson(dependents, filePath);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        return;
-                    }
-                }
-                System.out.println("Claim with ID " + claimId + " not found for dependent with ID " + dependentId);
-                return;
-            }
-        }
-        System.out.println("Dependent with ID " + dependentId + " not found.");
-    }
-
     public void deleteClaimPolicyHolders(List<PolicyHolder> policyHolders, String policyHolderId) {
         List<String> claimIdList = extractClaimIDPolicyHolder(policyHolders, policyHolderId);
         String filePath = "list_policyHolder.json";
@@ -901,15 +859,6 @@ public class START implements ClaimProcessManager  {
         System.out.println("Dependent with ID " + dependentId + " not found.");
     }
 
-
-    public static void writeDependentsToJson(List<Dependent> dependents, String filePath) {
-        try (FileWriter writer = new FileWriter(filePath)) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(dependents, writer);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void writePolicyHoldersToJson(List<PolicyHolder> policyHolders, String filePath) {
         try (FileWriter writer = new FileWriter(filePath)) {
