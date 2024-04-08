@@ -1,4 +1,7 @@
 package Program;
+/**
+ * @author <Pham Quang Huy - s3940676>
+ */
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

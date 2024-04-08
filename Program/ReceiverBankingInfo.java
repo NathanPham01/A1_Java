@@ -1,5 +1,7 @@
 package Program;
-
+/**
+ * @author <Pham Quang Huy - s3940676>
+ */
 public class ReceiverBankingInfo {
     private String bankName;
     private String accountName;
